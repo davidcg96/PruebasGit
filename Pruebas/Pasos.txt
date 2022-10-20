@@ -30,7 +30,7 @@
 12º Fusionar las ramas, para fusionarlas me tengo que ir antes a la rama master y fusionarla desde alli:
 	//git merge "nombre rama"
 
-13º Si no se quiere utilizar de nuevo la rama, hay que eliminarla
+13º Si no se quiere utilizar de nuevo la rama, hay que eliminarla tambien desde master
 	//git branch -d "nombre"
 
 
