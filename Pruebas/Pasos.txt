@@ -27,7 +27,7 @@
 11º Actualizar los cambios en la rama nueva creada
 	//git push origin("o nombre de la conexion") "nombre_rama"
 
-12º Fusionar las ramas:
+12º Fusionar las ramas, para fusionarlas me tengo que ir antes a la rama master y fusionarla desde alli:
 	//git merge "nombre rama"
 
 13º Si no se quiere utilizar de nuevo la rama, hay que eliminarla
