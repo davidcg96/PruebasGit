@@ -1,0 +1,126 @@
+
+-----------Trabajar con repositorios y colaboradores de manera segura-----------------------
+1º Crear repositorio en github
+2º Me voy al directorio donde voy a crear mi copia local y hago click derecho, git bash here, git init
+3º Configuro mi cuenta de github y email (puede ser cualquier usuario y correo en verdad, esto aparecera en los commits):
+	//git config --global user.name "nombre del github"
+	//git config --global user.email "email"
+	//git config --global --list
+
+4º Clonar repositorio: git clone url
+5º git remote add "nombre" (el nombre suele ser origin) "url" // crea una conexion al repositorio añadiendole un nombre
+	 //git remote add origin https://github.com/nombregithub/nombrerepositorio.git
+
+6º Mirar que se haya creado bien la conexión:
+	//git remote -v 
+
+7º Mirar las ramas que hay en el repositorio: 
+	//git branch --list (-r)
+8º Crear una nueva rama: 
+	//git branch "nombre"  //crea una nueva rama derivada de master
+9º Moverme de rama a la nuev: 
+	//git checkout "nombre" o bien con git switch "nombre"
+10º realizar los cambios en lso ficheros y añadirlos:
+	//git add . 
+11º Actualizar los cambios en la rama nueva creada
+	//git push origin("o nombre de la conexion") "nombre_rama"
+
+12º Fusionar las ramas:
+	//git merge "nombre rama"
+
+13º Si no se quiere utilizar de nuevo la rama, hay que eliminarla
+	//git branch -d "nombre"
+
+
+
+
+
+Pasos Básicos en Git---------
+
+1º Hacemos clic derecho en la carpeta que contenga todos los proyectos en carpetas que queremos subir. Hacemos Git Bash.
+2º Git Init: Esto crea un repositorio vacío en nuestro ordenador, en local.
+3º git status: Nos dice en que rama estamos y que archivos hay
+4º git add "nombre carpeta o archivo" : añade al repositorio la carpeta o archivo, no hay que poner "".
+5º git commit -m "comentario inicial":  Hace un comentario en el archivo con los cambios
+6º git add "nombre carpeta" : Cuando hacemos cambios en el archivo volvemos a añadir esto
+7º git commit -m "segunda actualizacion"  : dejamos este comentario
+8º git add prueba/hola.txt //esto si quiero añadir archivos sueltos que estna dentro de una carpeta
+
+------Pasos para trabajar con repositorio---------
+1º Crear repositorio en github: importante sino no se puede subir
+2º Clonar repositorio: git clone url
+3º Moverme a la carpeta que quiera hacer cambios: cd 
+4º Crear un archivo: touch archivo.txt
+5º Modificar Archivo desde linea comandos: vi archivo.txt
+6º Para salir wqexit
+7º Añadir el archivo nuevo : git add archivo.txt
+8º Hacer comentarios: git commit -m "comentarios"
+9º Subirlos a la rama de github: git push origin master ---- origin master es la rama a la que lo subo
+10º Entrar con tu cuenta
+	// Si hay varias personas trabajando y quieren hacer push, la persona que haga el push en segundo lugar, le dará error. Esto
+           se debe a que alguien había actualizado el repositorio y antes tiene que actualizarlo para hacer push
+11º Si tengo que actualizar antes de hacer push: git pull origin master 
+	//PASOS ANTES DE HACER PULLL
+		1º Actualizar repositorio-> pull
+		2º Fusionar cambios. Si hay conflicto de archivos, fusionarlos a mano, diff une los cambios a lo que ya tenias
+		3º Hacer comentarios
+
+12 Otra manera de actualizar los datos para evitar comflictos es usat git fetch "nombre rama"
+	//La diferencia entre fetch y pull, es que Fetch comprueba si ha habido algun cambio pero no se trae los cambios al repo local
+	sin embargo Pull, si se lo trae.
+	//Después de hacert un fetch y solucionar los comflictos, tengo que hacer un git merge  "nombre rama"
+
+	//Pasos a seguir con fetch
+	1º Hago git fetch origin master
+	2º Añado los cambios que habia hecho git add .
+	3º Me traigo los cambios del fetcg y los fusiono con los nuevos git merge origin/master
+	4º Me dará conflicto si lo hay, lo soluciono y hago git add .
+	5º lo subo al github git push origin master
+
+
+
+----- Ramas-------
+1º Crear una rama-> git branch "nombre"
+2º Moverse de rama-> git switch "nombre"
+3º eliminar rams-> git branch -d "nombre"
+4º fusionar ramas-> git merge "nombre"
+5ª listar ramas.> git branch --list
+
+-----etiquetando------
+1º git tag "nombre"
+2º git push "nombre_rama" "nombre_etiqueta"
+3º git tag -d "nombre" elimina la etiqueta
+
+----- Enumerar, crea, eliminar conexiones remotas-----
+git remote -v //enumera las conexiones remotas que tienes con otros repositorios
+git remote rm "nombre" // elimina la conexion al repositorio
+git remote add "nombre" "url" // crea una conexion al repositorio añadiendole un nombre
+
+-----Ignorar archivos-----
+1º touch one.txt crea el archivo de texto
+2º touch .gitignore //crea el archivo que contiene los archivos a ignorar
+3º escribir en gitignore el nombre del archivo a ignorar one.txt
+4º git add .gitignore //añado los archivos a ignorar
+5º git commit -m "archivos ignorados"
+
+------Añadir cambios a un archivo y deshacerlos---
+1º Si quiero que un archivo, se actualice con los cambios que se han hecho desde la ultima versión:
+2º git diff prueba/hola.txt
+3º Si quiero deshacer el cambio que he hecho en el paso 2
+4º git checkout -- prueba/prueba.txt
+5º Si quiero eliminar un archivo, tengo que cambiar el directorio a donde este el archivo y hacer: git rm -f hola.txt
+
+---Resetear los cambios---
+git reset HEAD hola.txt  //esto hace que vuelva a ponerlo antes
+
+
+------- Trucos y consejos---------
+1º git add .  //añade todos los archivos nuevos y modificados pero no los que se han eliminado de la rama
+2º git add -u  //añade todos los archivos borrado y modificados pero no los nuevos
+3º git add -A  //añade todos los archivos nuevos, modificados y borrados a la rama
+
+---- mirar fechas de cambios -------
+git log (-4) //si pongo un numero me da los ultimos cambios
+----- vovler a carpeta anterior----
+cd ..
+
