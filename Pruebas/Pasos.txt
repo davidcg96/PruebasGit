@@ -7,7 +7,7 @@
 	//git config --global user.email "email"
 	//git config --global --list
 
-4º Me clono el repositorio y me cambio a la carpeta del repositorio:
+4º Me clono el repositorio y me cambio a la carpeta del repositorio, si no lo hago desde aqui no se ven las carpetas:
 	//git clone url
 
 4º git remote add "nombre" (el nombre suele ser origin) "url" // crea una conexion al repositorio añadiendole un nombre
