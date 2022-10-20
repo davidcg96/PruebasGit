@@ -1,22 +1,24 @@
 
 -----------Trabajar con repositorios y colaboradores de manera segura-----------------------
-1º Crear repositorio en github
+1º Crear repositorio en github o si esta creado tmb
 2º Me voy al directorio donde voy a crear mi copia local y hago click derecho, git bash here, git init
 3º Configuro mi cuenta de github y email (puede ser cualquier usuario y correo en verdad, esto aparecera en los commits):
 	//git config --global user.name "nombre del github"
 	//git config --global user.email "email"
 	//git config --global --list
 
-4º Clonar repositorio: git clone url
-5º git remote add "nombre" (el nombre suele ser origin) "url" // crea una conexion al repositorio añadiendole un nombre
+4º git remote add "nombre" (el nombre suele ser origin) "url" // crea una conexion al repositorio añadiendole un nombre
 	 //git remote add origin https://github.com/nombregithub/nombrerepositorio.git
 
-6º Mirar que se haya creado bien la conexión:
+5º Mirar que se haya creado bien la conexión:
 	//git remote -v 
 
-7º Mirar las ramas que hay en el repositorio: 
+6º Si esta vacio el repositorio hago unos commits en la master y luego creo creo una rama directamente sino paso 7º
+7º Traer todas las actuaizaciones con fetch:
+	//git fetch origin  -> si quiero actualizar en la master
+8º Mirar las ramas que hay en el repositorio: 
 	//git branch --list (-r)
-8º Crear una nueva rama: 
+9º Crear una nueva rama: 
 	//git branch "nombre"  //crea una nueva rama derivada de master
 9º Moverme de rama a la nuev: 
 	//git checkout "nombre" o bien con git switch "nombre"
